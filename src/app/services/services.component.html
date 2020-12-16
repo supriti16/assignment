@@ -1,0 +1,130 @@
+<app-nav></app-nav>
+<h3 style="text-align: center;margin-top: 15px;">SERVICES</h3>
+<div class="row">
+    <div class="col-md-4">
+        <mat-card (click)="onSelectCard1()" 
+        [ngClass]="{'card-selected1 mat-elevation-z4': selected1} "
+        style="margin:100px;width: 45%;height: 150px;"
+        >
+            <span [matTooltip]=selected1 class="selection1">
+            <mat-icon>
+                <img src="assets/images/services/directions_car.svg" class="center" 
+            style="width: 650%;height: 100px;">
+            </mat-icon>
+            </span>
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            </mat-card-header>
+            <p style="margin-top:120px;">
+                some text</p>
+        </mat-card>
+    </div>
+    <div class="col-md-4">
+        <mat-card (click)="onSelectCard2()" 
+        [ngClass]="{'card-selected2 mat-elevation-z4': selected2} "
+        style="margin:100px;width: 45%;height: 150px;"
+        >
+            <span [matTooltip]=selected2 class="selection2">
+            <mat-icon>
+                <img src="assets/images/services/directions_car.svg" class="center" 
+                style="width: 650%;height: 100px;">
+            </mat-icon>
+            </span>
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            </mat-card-header>
+            <p style="margin-top:120px;">
+                some text </p>
+        </mat-card>
+    </div>
+    <div class="col-md-4">
+        <mat-card (click)="onSelectCard3()" 
+        [ngClass]="{'card-selected3 mat-elevation-z4': selected3} "
+        style="margin:100px;width: 45%;height: 150px;"
+        >
+            <span [matTooltip]=selected3 class="selection3">
+            <mat-icon>
+                <img src="assets/images/services/directions_car.svg" class="center" 
+            style="width: 650%;height: 100px;">
+            </mat-icon>
+            </span>
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            </mat-card-header>
+            <p style="margin-top:120px;">
+                some text </p>
+        </mat-card>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-4">
+       
+            <mat-card (click)="onSelectCard4()" 
+            [ngClass]="{'card-selected4 mat-elevation-z4': selected4} "
+            style="margin:100px;width: 45%;height: 150px;"
+            >
+                <span [matTooltip]=selected4 class="selection2">
+                <mat-icon>
+                    <img src="assets/images/services/directions_car.svg" class="center" 
+            style="width: 650%;height: 100px;">
+                </mat-icon>
+                </span>
+                <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                </mat-card-header>
+                <p style="margin-top:120px;">
+                    some text</p>
+            </mat-card>
+       
+    </div>
+    <div class="col-md-4">
+       
+        <mat-card (click)="onSelectCard5()" 
+        [ngClass]="{'card-selected5 mat-elevation-z4': selected5} "
+        style="margin:100px;width: 45%;height: 150px;"
+        >
+            <span [matTooltip]=selected5 class="selection5">
+            <mat-icon>
+                <img src="assets/images/services/directions_car.svg" class="center" 
+            style="width: 650%;height: 100px;">
+            </mat-icon>
+            </span>
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            </mat-card-header>
+            <p style="margin-top:120px;">
+                some text</p>
+        </mat-card>
+   
+</div>
+<div class="col-md-4">
+       
+    <mat-card (click)="onSelectCard6()" 
+    [ngClass]="{'card-selected2 mat-elevation-z4': selected6} "
+    style="margin:100px;width: 45%;height: 150px;"
+    >
+        <span [matTooltip]=selected6 class="selection6">
+        <mat-icon>
+            <img src="assets/images/services/directions_car.svg" class="center" 
+            style="width: 650%;height: 100px;">
+        </mat-icon>
+        </span>
+        <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        </mat-card-header>
+        <p style="margin-top:120px;">
+            some text</p>
+    </mat-card>
+
+</div>
+
+</div>
+<br><br>
+<div class="button">
+    <button mat-button (click)="onSubmit()">
+        CONTINUE
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+    
+</div>

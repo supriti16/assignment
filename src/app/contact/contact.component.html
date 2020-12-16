@@ -1,0 +1,113 @@
+<app-nav></app-nav>
+<h3 style="text-align: center;margin-top: 15px;">CONTACT</h3>
+<div class="card m-3">
+    <h5 class="card-header">Contact Information Form</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Title</label>
+                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Title is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-6">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control"  />
+                <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div> -->
+            </div>
+            <div class="form-group col-6">
+                <label>Mobile</label>
+                <input type="text" formControlName="email" class="form-control"  />
+                <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Mobile is required</div>
+                    <div *ngIf="f.email.errors.email">Mobile Number must be a valid mobile number</div>
+                </div> -->
+            </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-10">
+                    <label>Service Date and Time</label>
+                    <input
+        type="text"
+        placeholder="Choose date"
+        class="form-control"
+        bsDaterangepicker
+        [bsConfig]="{ isAnimated: true }">
+                </div>
+            </div>
+            <div class="form-row">
+                
+                <div class="form-group col-7">
+                    <label>Select Payment Method</label>
+                </div>
+                <div class="form-group col-1">
+                    <button type="button" *ngIf=!s class="btn btn-light">
+                        Cash</button>
+                </div>
+                <div class="form-group col-2">
+                    <button type="button" class="btn btn-light" 
+                    (click)="onButtonClick()">Credit Card</button>
+                </div>
+                <div class="form-row" *ngIf=s>
+                    <div class="form-group col-5">
+                        <label>Credit/Debit Card</label>
+                        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">card is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-5">
+                        <label>Expiry Date </label>
+                        <input
+        type="text"
+        placeholder="Choose date"
+        class="form-control"
+        bsDatepicker
+        [bsConfig]="{ isAnimated: true }">
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Date is required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1"
+                (click)="onContinue()"
+                >Continue</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
