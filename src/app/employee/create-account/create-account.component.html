@@ -1,0 +1,97 @@
+<div class="container w-50 mt-5">
+    <form>
+        <div class="text-center padding">
+            <h1><b>Create your account</b> </h1>
+        </div>
+        <br>
+        <div class="form-group">
+
+            <div class="form-row" [formGroup]="firstFormGroup">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="lastName" class="form-label col-lg-12 required">Last Name </label>
+                    <mat-form-field appearance="outline" class="col-lg-12">
+                        <input matInput type="text" class="col-lg-12" id="lastName" minlength="2"
+                            placeholder="Last Name" formControlName="lastName">
+                        <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['lastName'].hasError('required')">
+                            Last Name is required!
+                        </mat-error>
+                        <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['lastName'].hasError('minlength')">
+                            Enter minimum 2 characters!
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="form-group col-md-6 col-sm-6">
+                    <label for="lastName" class="form-label col-lg-12 required">First Name </label>
+                    <mat-form-field appearance="outline" class="col-lg-12">
+                        <input matInput type="text" class="col-lg-12" minlength="2" id="firstName"
+                            placeholder="First Name" formControlName="firstName">
+                        <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['firstName'].hasError('required')">
+                            First Name is required!
+                        </mat-error>
+                        <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['firstName'].hasError('minlength')">
+                            Enter minimum 2 characters!
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-12 col-lg-12">
+                    <label for="lastName" class="form-label required col-lg-12 required">Contact number </label>
+                    <mat-form-field appearance="outline" class="col-lg-12">
+                        <input matInput type="text" class="col-lg-12" id="contactNumber" placeholder="e.g +32 484766130"
+                            formControlName="contactNumber">
+                            <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['contactNumber'].hasError('pattern')">
+                            Please enter your phone number with country code w '+' sign e.g +32 484766130
+                        </mat-error>
+                        <mat-error style="font-size:12px" class="text-danger"
+                        *ngIf="firstFormGroup.controls['contactNumber'].hasError('required')">
+                        Contact Number is required!
+                    </mat-error>
+                            <!-- Please enter your phone number with country code w '+' sign e.g +32 484766130 -->
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-12 col-lg-12">
+                    <label for="email" class="form-label col-lg-12 required">Email Id</label>
+                    <mat-form-field appearance="outline" class="col-lg-12">
+                        <input matInput type="text" class="col-lg-12" id="email" placeholder="Email Id"
+                            formControlName="email">
+                            <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['email'].hasError('email')">
+                           Enter correct email!
+                        </mat-error>
+                        <mat-error style="font-size:12px" class="text-danger"
+                        *ngIf="firstFormGroup.controls['email'].hasError('required')">
+                        Email is required!
+                    </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-12 col-lg-12">
+                    <label for="password" class="form-label col-lg-12 required">Password</label>
+                    <mat-form-field appearance="outline" class="col-lg-12">
+                        <input matInput [type]="password" class="col-lg-12" id="password" placeholder="Password" minlength="6"
+                            formControlName="password">
+                            <mat-icon matSuffix (click)="onClick()">{{show ? 'visibility' : 'visibility_off'}}</mat-icon>
+                            <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['password'].hasError('required')">
+                            Password is required!
+                        </mat-error>
+                        <mat-error style="font-size:12px" class="text-danger"
+                            *ngIf="firstFormGroup.controls['password'].hasError('minlength')">
+                            Password should be atleat 6 characters!
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-group col-md-12 col-lg-12">
+                    <button type="submit" class=" btn btn-primary padding-top col-md-12 col-lg-12" (click)="onSubmitButtonClick()">
+                        Submit</button>
+
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
